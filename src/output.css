@@ -2396,6 +2396,14 @@ npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
     margin-top: 30px;
   }
 
+  .md\:mb-3 {
+    margin-bottom: 0.75rem;
+  }
+
+  .md\:mb-\[52px\] {
+    margin-bottom: 52px;
+  }
+
   .md\:block {
     display: block;
   }
@@ -2436,6 +2444,10 @@ npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
     width: 124px;
   }
 
+  .md\:w-\[251px\] {
+    width: 251px;
+  }
+
   .md\:w-\[260px\] {
     width: 260px;
   }
@@ -2460,14 +2472,6 @@ npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
     width: 100%;
   }
 
-  .md\:w-\[251px\] {
-    width: 251px;
-  }
-
-  .md\:w-\[251-x\] {
-    width: 251-x;
-  }
-
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -2482,10 +2486,6 @@ npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
 
   .md\:items-center {
     align-items: center;
-  }
-
-  .md\:justify-center {
-    justify-content: center;
   }
 
   .md\:justify-between {
@@ -2526,6 +2526,11 @@ npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
   .md\:px-\[35px\] {
     padding-left: 35px;
     padding-right: 35px;
+  }
+
+  .md\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .md\:pb-\[80px\] {
