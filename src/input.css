@@ -1,0 +1,43 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+/* @layer base {
+    html {
+        font-family: "gotham", sans-serif;
+    }
+} */
+
+@layer components {
+    .list_black {
+
+        @apply before:bg-[url('/image/session2/+.png')] before:inline-block before:content-[''] before:w-[14px] before:h-[14px] before:mr-[10px] before:bg-contain before:bg-no-repeat;
+        /* &::before {
+            background-image: url('/image/session2/+.png');
+            content: "";
+            width: 14px;
+            height: 14px;
+            display: inline-block;
+            margin-right: 16px;
+        } */
+    }
+
+    .list_red {
+        @apply before:bg-[url(/image/session2/++.png)] before:inline-block before:content-[''] before:w-[17px] before:h-[17px] before:mr-4 before:bg-contain before:bg-no-repeat;
+
+    }
+
+    .grid_ok {
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: 63px 63px;
+    }
+
+}
+
+
+
+/* 
+npx tailwindcss -i ./src/input.css -o ./src/output.css --watch 
+*/
