@@ -12,6 +12,8 @@
 </head>
 
 <body>
+    <input type="button" class="w-[200px] h-[70px] border border-solid border-black"
+        onclick="console.log('pham thanh long')">
     <div class="font-roboto bg-slate-300 flex flex-col pl-[60px] w-full h-full">
         <div class="flex-row mb-16">
             <button
@@ -30,9 +32,9 @@
             </div>
             <div class="w-[270px] h-[420px] bg-white mr-12">
                 <div class="w-[54px] h-[54px] bg-black rounded-[50%] mx-auto mt-[29px] mb-[7px]"></div>
-                <h3 class="block font-bold text-xl mb-1 text-center">Tilte</h3>
+                <h3 id="ptl" class="block font-bold text-xl mb-1 text-center">Tilte</h3>
                 <p class="text-sm text-center w-[194px] h-[32px] mx-auto mb-[30px]">Subtitle</p>
-                <div class="w-[193px] h-[100px] mx-auto flex flex-col justify-around mb-[65px]">
+                <div id="change" class="w-[193px] h-[100px] mx-auto flex flex-col justify-around mb-[65px]">
                     <p class="text-sm text-center opacity-50">Feature 1</p>
                     <p class="text-sm text-center opacity-50">Feature 2</p>
                     <p class="text-sm text-center opacity-50">Feature 3</p>
@@ -50,5 +52,78 @@
         </div>
     </div>
 </body>
+<script>
+    let name_bray = 'pham thanh long';
+    name_bray = 'pham Nhi';
+    let old = 23;
+    let thong_tin = { xa: "tam hoa", huyen: "nui thanh", tinh: '92' }
+    let mang = ["Nhi", "Nhi2", "Long", "Lanh"]
+    let arr = [{ ten: "long", tuoi: 24, que: "tam hoa" }, { ten: "Nhi", tuoi: 26, que: "hoa binh" }]
+    let noi_chuoi = "toi ten la " + name_bray + " nam nay toi " + old + " tuoi"
+    let noi_chuoi2 = `toi ten la ${name_bray} nam nay toi ${old} tuoi toi o viet nam`
+    console.log(noi_chuoi2);
+    console.log("toi ten la", name_bray, "nam nay toi", old, 'tuoi');
+    console.log(noi_chuoi);
+    console.log("kieu du lieu:", typeof arr);
+    console.log(mang);
+    console.log(old);
+    console.log(thong_tin);
+    console.log(name_bray);
+    console.log(typeof (thong_tin))
+    // vi du ve toan tu
+    console.log("vi du ve toan tu");
+    let a = 5, b = 100, c = 48;
+    a = a.toString();
+    let number = "100"
+    console.log("chuoi sang so:", typeof Number(number));
+    let number2 = "1002663864.1626abs"
+    number2 = parseInt(number2)  // cat so trong chuoi ra--- parseFloat
+    console.log("cat chuoi: ", number2);
+
+    console.log(typeof (a));
+    a += 5;
+    console.log(a, b, c);
+    console.log("tang:", a);
+    let d = b % c;
+    console.log('chia lay du:', d);
+    a += b;
+    console.log('gan a b:', a);
+    let ten = "pham thanh long"
+    let address = "Da Nang"
+    let noiChuoi = ten.concat(" ", "song o ", address) //noi chuoi
+    console.log(noiChuoi);  //
+    console.log(ten.indexOf('thanh')); //tra ve gia tri xuat hien dau tien
+    let inlu = ten.includes('thanh')  //tra ve true,false neu chuoi co/khong co  gia tri duoc chi dinh
+    console.log(inlu);
+    console.log(ten.slice(5)); /// cat chuuoi/mang tu phan tu thu 5
+    console.log(ten.split(",", 1));  //chuyen chuoi thanh mang tach bang dau phay, laay 1 phan tu
+
+    // array methods
+    let family = ["nhi", "nhi2", "long", "lanh"]
+    console.log("gia dinh:", family[2])
+    console.log(family.join(" ")); //chuyen mang sang chuoi va tuy bien dau ngan cach
+    family.push("danh");
+    console.log(family);
+    delete (family[1])
+    family.pop()  // xoa phan tu cuoi cung khoi mang
+    console.log(family);
+    family.splice(2, 1)
+    console.log("xoa 1 phan tu tu vi tri 2:", family);
+    document.getElementById("ptl").innerHTML = ten;
+
+    let data = ""
+    family.forEach(myFunction)
+    function myFunction(value, index, array) {
+        data += `<p class="text-sm text-center opacity-50"> ${value} </p>  `
+    }
+    document.getElementById("change").innerHTML = data;
+
+    let information = [{ ten: "long", tuoi: 24, que: "viet nam" }, { ten: "nhi", tuoi: 26, que: "tam hoa" }]
+
+
+
+
+
+</script>
 
 </html>

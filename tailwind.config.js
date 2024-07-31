@@ -9,7 +9,9 @@ module.exports = {
     "./src/index7.html",
     "./src/index8.html",
     "./src/project.html",
-    "./index.html"],
+    "./index.html",
+    "./index9.html"],
+
   theme: {
 
     extend: {

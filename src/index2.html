@@ -9,6 +9,7 @@
 </head>
 
 <body class="bg-slate-400 font-roboto">
+    <input id="input1" type="button" class="w-[200px] h-[70px] border border-solid border-black">
     <div class="w-[1440px] xl:w-[900px] lg:w-[700px] sm:w-[400px] m-auto">
         <div class="h-16 bg-white  flex flex-row items-center mb-5  ">
             <b class="ml-10 text-2xl mr-[460px] xl:mr-[300px] lg:mr-[150px] sm:w-[50px]">TRADE</b>
@@ -63,5 +64,11 @@
         </div>
     </div>
 </body>
+<script>
+    const sukien = document.getElementById("input1")
+    sukien.addEventListener("click", function () {
+        console.log(`ten cua toi la: pham thanh long`);
+    })
+</script>
 
 </html>

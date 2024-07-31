@@ -9,11 +9,30 @@
 </head>
 
 <body class="bg-slate-200 flex flex-col items-center">
+
+    <input type="text" value="nhap vao" id="website" placeholder="nhap so moi:"
+        class="w-[70px] h-10 text-center border border-solid font-bold">
+    <button id="btn1" value="save" class="w-10 h-6 border border-black  ">save</button>
+
+    <input type="text" value="1" id="website1" placeholder="nhap so moi:"
+        class="w-[70px] h-10 text-center border border-solid font-bold">
+    <input type="text" value="2" id="website2" placeholder="nhap so moi:"
+        class="w-[70px] h-10 text-center border border-solid font-bold">
+    <button id="btn2" value="save" class="w-16 h-6 border border-black mb-10 ">sosanh</button>
+
+    <input type="text" name="" id="event" class="w-[70px] h-10 text-center border border-solid font-bold">
+    <button id="btn3" value="save" class="w-16 h-6 border border-black  ">events</button>
+    <button id="btn4" value="save" class="w-16 h-6 border border-black  ">clearTO</button>
+
+    <input type="text" id="js_get_value" placeholder="nhap vao" onchange="functionDOM()"
+        class="w-[70px] h-10 text-center border border-solid font-bold">
+
     <div class="bg-slate-200 w-[1440px] h-full pt-[96px] flex flex-col items-center xl:w-full">
-        <b class="text-[32px] text-center mb-6 ">Your Best Value Proposition</b>
-        <p class="text-lg  text-center mb-16">“If you don’t try this app, you won’t become the superhero you were meant
+        <b class="text-[32px] text-center mb-6 " id="change_tag">Your Best Value Proposition</b>
+        <p id="chinhsua" class="text-lg  text-center mb-16">“If you don’t try this app, you won’t become the superhero
+            you were meant
             to be”
-        <div class="grid grid-cols-4 gap-x-[30px] xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1">
+        <div id="change" class="grid grid-cols-4 gap-x-[30px] xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1">
             <div class="w-[270px] h-[436px] bg-white">
                 <div class="w-[270px] h-[270px] bg-black flex mb-6">
                     <div class="w-16 h-16 bg-white rounded-lg m-auto"></div>
@@ -51,7 +70,7 @@
             consectetur
             adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         </p>
-        <div class="grid grid-cols-3 gap-x-[30px] xl:grid-cols-2 lg:grid-cols-1">
+        <div id="change2" class="grid grid-cols-3 gap-x-[30px] xl:grid-cols-2 lg:grid-cols-1">
             <div class="w-[370px] h-[502px] bg-white flex flex-col">
                 <div class="w-full h-[370px] bg-black mb-[34px]"></div>
                 <p class="text-2xl h-[66px] mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
@@ -129,5 +148,197 @@
     </div>
 
 </body>
+<script>
+    let information = [{ ten: "long", tuoi: 24, que: "viet nam" }, { ten: "nhi", tuoi: 28, que: "tien phuoc" }, { ten: "lanh", tuoi: 22, que: "cau ba ron" }, { ten: "nhi2", tuoi: 26, que: "tam hoa" }]
+    // console.log(typeof information);
+    let address = [{ ten_quan: "banh canh he be noong", dia_chi: "tam ky" }, { ten_quan: "shop cu kun", dia_chi: "tien tho-tien phuoc" }, { ten_quan: "ruong muoi ong khuong", dia_chi: "xom nai thon 5" }]
+
+    let family = ["nhi", "nhi2", "long", "lanh"]
+
+    let data = ""
+    information.forEach(myFunction)
+    function myFunction(value, index, array) {
+        data += `<div class="w-[270px] h-[436px] bg-white">
+                <div class="w-[270px] h-[270px] bg-black flex mb-6">
+                    <div class="w-16 h-16 bg-white rounded-lg m-auto"></div>
+                </div>
+                <p class="text-xl ml-6">tên: ${value.ten} - ${value.tuoi} tuổi </p>  
+                <p class="text-xl ml-6 mb-[30px]"> nơi ở: ${value.que}</p>
+                <a href="" class="text-sm ml-6">See more</a>
+            </div> `
+    }
+    document.getElementById("change").innerHTML = data;
+
+    let inf = "";
+    address.forEach(thongtin);
+    function thongtin(value, index, array) {
+        console.log(value);
+        inf += `<div class="w-[370px] h-[502px] bg-white flex flex-col">
+                <div class="w-full h-[370px] bg-black mb-[34px]"></div>
+                <p class="text-2xl h-[66px] mb-3">thong tin: ${value.ten_quan} <br> dia chi: ${value.dia_chi}</p>
+                <a href="" class="text-sm">Learn more</a>
+            </div>`
+    }
+    document.getElementById("change2").innerHTML = inf;
+
+    let hamcuatoi = function (a) {
+        console.log(a)
+    }
+    hamcuatoi("pham thi thanh nhi");
+    let myName = 'pham thanh long';
+    console.log(myName.split(" ").reverse().join(" "))  //reserve dao nguoc thanh phan mang theo thu tu giam dan
+    if (myName.length <= 10) {
+        console.log(myName.length <= 20);
+    } else if (myName.length >= 10) {
+        console.log("dieu kien thu 2 dung");
+    } else console.log("ky tu ten > 10")
+
+    const element = document.getElementById("website");
+    console.log(element.value);
+
+    const getelement = document.getElementById("btn1")
+    getelement.addEventListener('click', function () {
+        // alert("Bạn vừa click vào bt");
+        // console.log(element.value);
+        // if (element.value % 2 == 0) {
+        //     console.log("so vua nhap vao la so chan");
+        // } else if (element.value % 2 > 0) {
+        //     console.log("so vua nhap la so le");
+        // } else console.log("ban nhap vao khong phai so");
+        switch (element.value % 2) {
+            case 1:
+                console.log(`so vua nhap vao la so le`);
+                break
+            case 0:
+                console.log(`so vua nhap vao la so chan`);
+                break
+            default:
+                console.log(`ban nhap vao khong phAI LA SO`);
+        }
+    });
+
+    const sothu1 = document.getElementById("website1");
+    const sothu2 = document.getElementById("website2");
+    console.log(typeof sothu1);
+    const getsosanh = document.getElementById("btn2")
+    getsosanh.addEventListener('click', function () {
+
+        if (sothu1.value > sothu2.value) {
+            console.log(`so vua nhap lon nhat la : ${sothu1.value}`);
+        } else if (sothu1.value < sothu2.value) {
+            console.log(`so vua nhap lon nhat la: ${sothu2.value}`);
+        } else console.log(`hai so vua nhap bang nhau co gia tri la ${sothu1.value}`);
+
+    });
+
+
+    // loop
+    // for (let i = 1; i < 100; i++) {
+    //     console.log(i);
+    // }
+
+    //// events,setimeout
+
+    const event = document.getElementById('event');
+    const button = document.getElementById('btn3');
+    const clear_button = document.getElementById("btn4")
+    abs = "toi ten la:"
+    const timer = setTimeout(function () { console.log(`${abs} ${event.value}`) }, 5000)
+    button.addEventListener("click", function () {
+        timer
+    })
+
+    clear_button.addEventListener("click", function () {
+        clearTimeout(timer)
+        console.log("clear timeout ok");
+    })
+
+
+    ///DOM , onchange console.log gia tri da nhap
+    const dom1 = document.getElementById("js_get_value");
+    dom1.addEventListener("change", function () {
+        console.log(`gia tri da nhap: ${dom1.value}`);
+    })
+
+    function functionDOM() {                                        // dung onchange
+        const dom2 = document.getElementById("js_get_value");
+        console.log(`nhap vao gia tri ${dom2.value}`)
+    };
+
+    // const gettag = document.getElementsByTagName("input");     /// getElement TagName
+    // console.log(gettag[4]);
+    // gettag[4].addEventListener("change", function () {
+    //     console.log(`${gettag[4].value}`)
+    // })
+
+    /// querySelectorAll
+
+    document.getElementById("change_tag").innerHTML = "pham thanh long";
+    document.getElementById("change_tag").style.backgroundColor = "#FF1C03"
+
+    // node   appendChild , remoteChild , 
+    const newTag = document.createElement('p');
+    const newElement = document.createTextNode("tam hoa nui thanh quang nam")
+    newTag.appendChild(newElement);
+
+    document.getElementById("change_tag").appendChild(newTag)
+
+
+    //////
+
+    const a = "abcdef"
+    const b = 'abcdef'
+    console.log("so sanh string:", a === b);
+
+    const c = { mot: "long", hai: "lanh" }
+    const d = { mot: "long", hai: "lanh" }
+    console.log("so sanh object", c == d);
+
+    const arrayone = ["nhi", "nhi2", "long", "lanh"]
+    const arraytwo = ["nhi", "nhi2", "long", "lanh"]
+    console.log("so sanh array:", JSON.stringify(arrayone) === JSON.stringify(arraytwo));/// so sanh array
+    console.log(" kieu du lieu:", typeof JSON.stringify(arrayone));
+
+    console.log(typeof arrayone);
+
+
+
+    const control1 = 4
+    const bien1 = document.getElementById("chinhsua")
+
+    // if (control1 == 2) {
+    //     bien1.style.backgroundColor = "red"
+    // } else bien1.style.backgroundColor = "green"
+
+
+    control1 == 2 ? bien1.style.backgroundColor = "red" : control1 == 3 ? bien1.style.backgroundColor = "green" : bien1.style.backgroundColor = "blue";
+
+    //// 
+    const arraythree = [4, 6, 8, 10]
+    const arrayfour = [1, 3, 5, 7]
+
+    const arrr = arraythree.forEach(function ham(value, index, array) {
+        value * 2
+    })
+    console.log(arraythree);
+
+    const arr2 = arrayfour.map(function ham2(value, index, array) {
+        value * 2
+    })
+    console.log(arrayfour)
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
 
 </html>
